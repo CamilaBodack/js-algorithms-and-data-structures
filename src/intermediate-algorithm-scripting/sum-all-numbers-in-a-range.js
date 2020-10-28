@@ -19,7 +19,6 @@ function sumAll(arr) {
     }
 
     let finalArr = arr.concat(newArr).sort((a, b) => a - b)
-    console.log(finalArr.reduce(finalArrReducer))
     return finalArr.reduce(finalArrReducer)
 }
 
