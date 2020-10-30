@@ -6,11 +6,16 @@ Note
 You can return the array with its elements in any order.
 */
 
-function diffArray(arr1, arr2) {
-
- let arrDiff = arr1.filter(arrPosition => !arr2.includes(arrPosition)).concat(arr2.filter(arrPosition => !arr1.includes(arrPosition)))
-
-return arrDiff
+function destroyer(arr) {
+  let args = Array.prototype.slice.call(arguments);
+  for(let arrPosition = 0; arrPosition < arr.length; arrPosition++){
+    for(let argsPosition = 0; argsPosition < args.length; argsPosition++){
+      if(arr[arrPosition] === args[argsPosition]){
+          delete arr[arrPosition]
+    }
+   }
+  }
+ return arr.filter(Boolean)
 }
 
-diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)
