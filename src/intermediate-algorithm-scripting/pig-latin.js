@@ -29,7 +29,6 @@ function translatePigLatin(str) {
         counter++
     }
     newArr.push("ay")
-    console.log(newArr.join(""))
     return newArr.join("")
 }
 
