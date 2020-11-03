@@ -10,7 +10,7 @@ The unique numbers should be sorted by their original order, but the final array
 
 
 function uniteUnique(arr) {
-    let args = Array.prototype.slice.call(arguments);
+    let args = Array.prototype.slice.call(arguments)
     let newArr = []
     for (let i = 0; i < args.length; i++) {
         for (let j = 0; j < args[i].length; j++) {
