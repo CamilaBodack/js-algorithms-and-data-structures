@@ -6,13 +6,14 @@ Hint: Try converting each value to a Boolean.
 
 */
 
-function truthCheck(collection, pre) {
-  for(let i = 0; i < collection.length; i++){
-      if(!collection[i][pre]){
-        return false
-      }
+function bouncer(arr) {
+  for(let position = 0; position < arr.length; position ++){
+    if(Boolean(arr[position]) !== true){
+      arr.splice(position, 1)
+      position--
+    }
   }
-  return true
+  return arr;
 }
 
-truthCheck([{"single": "double"}, {"single": NaN}], "single")
+bouncer([false, null, 0, NaN, undefined, ""]);
