@@ -27,38 +27,55 @@ if(cash > sumCid){
   }
 
 // change
+result = change
 
-for(let i = 0; i < cid.length; i++){
-     let one_hundred = (change - cid[i][1])
-     if(one_hundred < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = one_hundred}
-     let twenty = (change - cid[i][1])
-     if(twenty < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = twenty}
-     let ten = (change - cid[i][1])
-     if(ten < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = ten}
-     let five = (change - cid[i][1])
-     if(five < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = five}
-     let dollar = (change - cid[i][1])
-     if(dollar < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = dollar}
-     let quarter = (change - cid[i][1])
-     if(quarter < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = quarter}
-     let dime = (change - cid[i][1])
-     if(dime < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = dime}
-     let nickel = (change - cid[i][1])
-     if(nickel < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = nickel}
-     let penny = (change - cid[i][1])
-     if(penny < 0){continue}
-     else{movArr.push(cid[i][0], cid[i][1], change), result = penny}
+one_hundred = (change - cid[0][1])
+
+if(one_hundred > 0){movArr.push(cid[0][1], one_hundred), change = one_hundred}
+twenty = (change - Number((change % cid[1][1])))
+change = Number((change % cid[1][1]).toFixed(2))
+
+
+if(twenty > 0){movArr.push(cid[1][0], twenty)}
+ten = (change - Number((change % cid[2][1])))
+change = Number((change % cid[2][1]).toFixed(2))
+
+
+if(ten > 0){movArr.push(cid[2][0], ten)}
+five = (change - Number(change % 5).toFixed(2))
+change = Number((change % 5).toFixed(2))
+
+
+
+if(five > 0){movArr.push(cid[3][0], five), result = five}
+dollar = (result - cid[3][1])
+console.log('--dollar',cid[4][0], cid[4][1])
+
+console.log('five', five)
+console.log('change', change.toFixed(2))
+
+
+
+
+
+
+
+if(dollar > 0){movArr.push(cid[4][0], result), result = dollar}
+quarter = (result - cid[5][1])
+console.log('--quarter',cid[5][0], cid[5][1])
+if(quarter > 0){movArr.push(cid[5][0], result), result = quarter}
+dime = (result - cid[6][1])
+console.log('--dime',cid[6][0], cid[6][1])
+if(dime > 0){movArr.push(cid[6][0], result), result = dime}
+nickel = (result - cid[7][1])
+console.log('--nickel',cid[7][0], cid[7][1])
+if(nickel > 0){movArr.push(cid[7][0], result), result = nickel}
+penny = (result - cid[8][1])
+console.log('--penny',cid[8][0], cid[8][1])
+if(penny > 0){movArr.push(cid[8][0], result), result = penny}
+
+//return console.log({status: "OPEN", change: [movArr]})
+
 }
 
-return {status: "OPEN", change: [movArr]}
-}
-
-checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])
+checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])
