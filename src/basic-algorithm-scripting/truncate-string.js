@@ -1,6 +1,5 @@
 function truncateString(str, num) {
-  if(str.length > num){ return str.substring(0, num).concat('...')}
-  else{return str}
+  return (str.length > num) ? str.substring(0, num).concat('...') : str
 }
 
 truncateString("A-", 1);
