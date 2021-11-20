@@ -1,3 +1,7 @@
-# js-algorithms-and-data-structures
+# js-algorithms-and-data-structures 
 
-Project containing my FreeCodeCamp JavaScript Algorithms And Data Structures challenges's solutions.
+:sparkles:  :sparkles:  :sparkles: 
+
+Project containing my FreeCodeCamp JavaScript Algorithms And Data Structures solutions.
+
+:sparkles:  :sparkles:  :sparkles: 
